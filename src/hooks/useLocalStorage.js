@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 export const useLocalStorage = (key, initialValue) => {
   // Checking if key is saved in local storage already and if not then setting to initialValue
@@ -13,7 +13,7 @@ export const useLocalStorage = (key, initialValue) => {
     // Saves state like a normal hook
     setStoredValue(value);
 
-    // Commiits state to local storage
+    // Commits state to local storage
     window.localStorage.setItem(key, JSON.stringify(value));
   };
   return [storedValue, setValue];
